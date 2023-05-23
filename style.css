@@ -1,0 +1,32 @@
+/* Regole generali */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: lightgrey;
+}
+
+.container-fluid{
+    position: relative;
+}
+
+.container-lg{
+    background-color: white;
+    height: 90vh;
+    position: absolute;
+    top: 5vh;
+    left: 50%;
+    transform: translate(-50%,0%);
+    z-index: 100;
+}
+
+#green-row{
+    height: 15vh;
+    background-color: lightseagreen;
+}
