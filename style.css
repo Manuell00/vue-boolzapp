@@ -78,13 +78,20 @@ body{
     justify-content: space-between;
     align-items:center;
     gap: 10px;
-    width: 30%;
+    width: 40%;
     margin: 0 10px;
+    font-weight: 500;
 }
+
+.utente span{
+    width: 70%;
+}
+
 
 .utente img{
     height: 50px;
     width: 50px;
+    border-radius: 50%;
 }
 
 .utente i{
@@ -127,7 +134,20 @@ body{
     font-size: 12px;
 }
 
+/* Inserisco la CONTACT-CHAT */
+.contact-chat{
+    height: calc(100% - 70px - 70px - 50px);
+    overflow-y: scroll;
+}
 
+.chatUtente{
+    padding: 10px 0;
+    height: auto;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 
 

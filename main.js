@@ -13,6 +13,13 @@ createApp({
             // Inserisco i contatti
             contacts: [
                 {
+                    name: 'Manuel.C',
+                    avatar: './img/avatar_0.jpeg',
+                    visible: true,
+                    messages: [],
+                },
+
+                {
                     name: 'Michele',
                     avatar: './img/avatar_1.png',
                     visible: true,
@@ -193,6 +200,7 @@ createApp({
 
     // Inserisco i metodi
     methods: {
+      
 
     }
 }).mount("#app");

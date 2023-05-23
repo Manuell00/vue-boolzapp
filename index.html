@@ -72,7 +72,12 @@
 
                 <!-- Definisco la parte dei contatti CONTACT-CHAT -->
                 <div class="contact-chat">
-
+                    <div class="chatUtente" v-for="(item,index) in contacts">
+                        <div class="utente"  v-if="index !== 0">
+                            <img :src="item.avatar" alt="{{item.name}} Immagine">
+                            <span class="name">{{item.name}}</span>
+                        </div>
+                    </div>
                 </div>
 
             </div>
