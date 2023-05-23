@@ -28,7 +28,62 @@
 
         <!-- Green-row -->
         <div class="row" id="green-row"></div>
-        <div class="container-lg">
+
+        <!-- SCREEN -->
+        <div class="container-lg" id="screen">
+
+            <!-- COLONNA CONTATTI -->
+            <div class="col-contatti">
+
+                <!-- Definisco la riga MIOUTENTE -->
+                <div class="mioUtente">
+                    <div class="utente">
+                        <img :src="contacts[0].avatar" alt="Manuel Immagine">
+                        <span class="name">{{contacts[0].name}}</span>
+                    </div>
+
+                    <div class="utente">
+                        <i class="fa-sharp fa-solid fa-spinner"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-list"></i>
+                    </div>
+                </div>
+
+                <!-- Definisco la riga del BUNNER -->
+                <div class="bunner">
+
+                    <!-- Simbolo campana -->
+                    <span class="symbol"><i class="fa-regular fa-bell-slash"></i></span>
+
+                    <!-- Frasi bunner -->
+                    <div>
+                        <div class="name">Ricevi notifiche di nuovi messaggi</div>
+                        <div class="description">Attiva notifiche desktop</div>
+                    </div>
+                </div>
+
+                <!-- Definisco la barra di ricerca FINDBAR -->
+                <div class="findbar">
+                    <form class="d-flex" role="search">
+                        <button class="btn bg-white" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input class="form-control me-2" type="search" placeholder="Cerca o inizia una nuova chat" aria-label="Search">
+                      </form>
+                </div>
+
+                <!-- Definisco la parte dei contatti CONTACT-CHAT -->
+                <div class="contact-chat">
+
+                </div>
+
+            </div>
+
+            <!-- COLONNA CHAT -->
+            <div class="col-chat">
+                ciso
+
+
+            </div>
+
         
         </div>
 

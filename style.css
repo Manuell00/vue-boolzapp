@@ -16,7 +16,37 @@ body{
     position: relative;
 }
 
-.container-lg{
+#green-row{
+    height: 20vh;
+    background-color: lightseagreen;
+}
+
+/* Inserisco le classi utili in tutta la pagina */
+
+.symbol{
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color:white ;
+    color:lightskyblue ;
+}
+
+.name{
+    color: black;
+    font-size: 14px;
+}
+
+.description{
+    color: grey;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+/* Definisco lo screen */
+#screen{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
     background-color: white;
     height: 90vh;
     position: absolute;
@@ -24,9 +54,89 @@ body{
     left: 50%;
     transform: translate(-50%,0%);
     z-index: 100;
+    padding: 0;
 }
 
-#green-row{
-    height: 15vh;
-    background-color: lightseagreen;
+/* Definisco la prima macro sezione dello screen */
+.col-contatti{
+    width: 35%;
+    background-color: red;
 }
+
+/* Inserisco la riga MIOUTENTE */
+.mioUtente{
+    height: 70px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.utente{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    gap: 10px;
+    width: 30%;
+    margin: 0 10px;
+}
+
+.utente img{
+    height: 50px;
+    width: 50px;
+}
+
+.utente i{
+    font-size: 25px;
+    color: grey;
+}
+
+/* Inserisco la riga BUNNER */
+.bunner{
+    height: 70px;
+    background-color: lightskyblue;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.bunner i{
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* Inserisco la FINDBAR */
+.findbar{
+    height: 50px;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.findbar form{
+    border: 2px solid lightgrey;
+    border-radius: 6px;
+}
+
+.findbar input{
+    height: 40px;
+    width: 300px;
+    border: 0;
+    font-size: 12px;
+}
+
+
+
+
+
+
+
+
+/* Definisco la seconda macro sezione dello screen */
+.col-chat{
+    width: 65%;
+    background-color: yellow;
+}
+
