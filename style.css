@@ -60,7 +60,6 @@ body{
 /* Definisco la prima macro sezione dello screen */
 .col-contatti{
     width: 35%;
-    background-color: red;
 }
 
 /* Inserisco la riga MIOUTENTE */
@@ -143,10 +142,14 @@ body{
 .chatUtente{
     padding: 10px 0;
     height: auto;
-    background-color: whitesmoke;
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.chatUtente:hover{
+    background-color: lightgray;
 }
 
 
