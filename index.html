@@ -109,10 +109,10 @@
                 </div>
 
                 <!-- Definisco la CHAT -->
-                <div class="chat">
-                    <!-- <div v-if="inputText !== '' && sendMessageOnEnter === true">
+                <div class="chat" :class="principal">
+                    <div v-if="inputText !== '' && sendMessageOnEnter === true">
                         {{inputText}}
-                    </div> -->
+                    </div>
 
 
                 </div>
