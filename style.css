@@ -249,20 +249,45 @@ body {
 
 
 
-/* Messaggi inviati */
-.green-message {
+/* Messaggi con chat selezionata */
+.chatVisual{
+    position: relative;  
+    margin-bottom: 10px;
+    display: block;
+}
+
+.sent {
+    display: block;
+    right: 10px;
+    position: absolute;
+    max-width: 200px;
     color : black;
-    margin: 20px;
-    padding: 8px;
+    margin-bottom: 20px;
+    padding: 12px;
     border-radius: 10px;
     background-color: lightgreen;
     z-index: 100;
     height: auto;
 } 
 
-.send-chat p {
-    display: inline-block;
-    max-width: 300px; /* Imposta la larghezza fissa desiderata */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
+.received{
+    display: block;
+    left: 10px;
+    position: absolute;
+    max-width: 200px;
+    color : black;
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: grey;
+    z-index: 100;
+    height: auto;
+}
+
+
+.date{
+    bottom: 5px;
+    right: 5px;
+    position: absolute;
+    font-size: 8px;
+}

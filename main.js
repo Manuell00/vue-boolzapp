@@ -204,8 +204,12 @@ createApp({
             // Definisco una variabile per dire se il messaggio è stato inviato o meno
             sendMessageOnEnter : false,
 
+            selectedContact: null,
+
             // Definisco una variabile che mi definisca la classe quando invio il messaggio
             principal : ''
+
+            
 
 
         }
@@ -220,6 +224,10 @@ createApp({
         insertEmoji(emoji) {
             this.inputText += emoji;
         },
+
+        selectContact(contact) {
+            this.selectedContact = contact;
+          },
 
         sendMessage() {
             this.sendMessageOnEnter = true

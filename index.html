@@ -109,21 +109,26 @@
                 </div>
 
                 <!-- Definisco la CHAT -->
+
+                <!-- Inizializzo caricando subito i messaggi della chat in posizione 1, la prima è la mia quindi la escludo -->
                 <div class="chat">
-                    <div v-if="inputText !== '' && sendMessageOnEnter === true" class="row">
-
-                        <!-- Prima colonna -->
-                        <div class="col-md-6 text-left">
-                            
-                        </div>
-
-                        <!-- Seconda colonna -->
-                        <div class="col-md-6 text-right send-chat">
-                            <p :class="principal">{{inputText}}</p>
+                    <div v-if="selectedContact == null">
+                        <div v-for="message in contacts[1].messages" :key="message.date"
+                            :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}">
+                            <span class="message"> {{ message.message }}</span>
+                            <span  class="date"> {{ message.date }}</span>
                         </div>
                     </div>
 
+                <!-- Utilizzo le proprietà date dalla funzione selectContact(contact) per visualizzare i messaggi del contatto selezionato -->
+                    <div v-if="selectedContact" class="chatVisual ">
+                        <div v-for="message in selectedContact.messages" :key="message.date"
+                            :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}" class="chatVisual">
+                            <div class="message">{{ message.message }}</div>
+                            <span class="date">{{ message.date }}</span>
 
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Definisco la barra per scrivere -->
@@ -158,3 +163,17 @@
 </body>
 
 </html>
+
+
+<!-- <div v-if="inputText !== '' && sendMessageOnEnter === true" class="row">
+
+                        Prima colonna
+                        <div class="col-md-6 text-left">
+                            
+                        </div>
+
+                         Seconda colonna
+                        <div class="col-md-6 text-right send-chat">
+                            <p :class="principal">{{inputText}}</p>
+                        </div>
+                    </div> -->
