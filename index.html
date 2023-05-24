@@ -12,7 +12,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Inserisco il link di Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- Definisco il title -->
     <title>Boolzapp</title>
@@ -25,9 +26,10 @@
 </head>
 
 <!-- BODY -->
+
 <body>
-     <!-- Creo il container sul quale monterò il createApp -->
-     <div id="app" class="container-fluid">
+    <!-- Creo il container sul quale monterò il createApp -->
+    <div id="app" class="container-fluid">
 
         <!-- Green-row -->
         <div class="row" id="green-row"></div>
@@ -69,14 +71,15 @@
                 <div class="findbar">
                     <form class="d-flex" role="search">
                         <button class="btn bg-white" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <input class="form-control me-2" type="search" placeholder="Cerca o inizia una nuova chat" aria-label="Search">
-                      </form>
+                        <input class="form-control me-2" type="search" placeholder="Cerca o inizia una nuova chat"
+                            aria-label="Search">
+                    </form>
                 </div>
 
                 <!-- Definisco la parte dei contatti CONTACT-CHAT -->
                 <div class="contact-chat">
                     <div class="chatUtente" v-for="(item,index) in contacts">
-                        <div class="utente"  v-if="index !== 0">
+                        <div class="utente" v-if="index !== 0">
                             <img :src="item.avatar" alt="{{item.name}} Immagine">
                             <span class="name">{{item.name}}</span>
                         </div>
@@ -90,7 +93,7 @@
 
             <!-- COLONNA CHAT -->
             <div class="col-chat">
-                 <!-- Definisco la riga UTENTECHAT -->
+                <!-- Definisco la riga UTENTECHAT -->
                 <div class="mioUtente">
                     <div class="utenteChat">
                         <img :src="contacts[1].avatar" alt="chat Immagine">
@@ -111,10 +114,18 @@
 
                 <!-- Definisco la barra per scrivere -->
                 <div class="writeChat">
-                    <i class="fa-regular fa-face-smile"></i>
+
+                    <div class="emoji-picker">
+                        <i class="fa-regular fa-face-smile" @click="toggleEmojiPicker"></i>
+
+                        <div v-if="showEmojiPicker" class="emoji-container">
+                            <button v-for="emoji in emojiList" :key="emoji" @click="insertEmoji(emoji)">{{emoji}}</button>
+                        </div>
+                    </div>
 
                     <div class="input-group input-group-sm">
-                        <input type="text" class="form-control" aria-label="Sizing example input" placeholder="Scrivi un messaggio"   aria-describedby="inputGroup-sizing-sm">
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                            placeholder="Scrivi un messaggio" aria-describedby="inputGroup-sizing-sm" v-model="inputText">
                     </div>
 
                     <i class="fa-solid fa-microphone"></i>
@@ -125,7 +136,7 @@
 
             </div>
 
-        
+
         </div>
 
 

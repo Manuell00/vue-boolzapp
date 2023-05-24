@@ -1,49 +1,49 @@
 /* Regole generali */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
 
-body{
+body {
     height: 100vh;
     width: 100%;
     background-color: lightgrey;
 }
 
-.container-fluid{
+.container-fluid {
     position: relative;
 }
 
-#green-row{
+#green-row {
     height: 20vh;
     background-color: lightseagreen;
 }
 
 /* Inserisco le classi utili in tutta la pagina */
 
-.symbol{
+.symbol {
     margin: 0 10px;
     padding: 10px;
     border-radius: 50%;
-    background-color:white ;
-    color:lightskyblue ;
+    background-color: white;
+    color: lightskyblue;
 }
 
-.name{
+.name {
     color: black;
     font-size: 14px;
 }
 
-.description{
+.description {
     color: grey;
     font-size: 12px;
     text-decoration: underline;
 }
 
 /* Definisco lo screen */
-#screen{
+#screen {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -52,19 +52,19 @@ body{
     position: absolute;
     top: 5vh;
     left: 50%;
-    transform: translate(-50%,0%);
+    transform: translate(-50%, 0%);
     z-index: 100;
     padding: 0;
 }
 
 /* Definisco la prima macro sezione dello screen */
-.col-contatti{
+.col-contatti {
     width: 35%;
     border: 1px solid gray;
 }
 
 /* Inserisco la riga MIOUTENTE */
-.mioUtente{
+.mioUtente {
     height: 70px;
     background-color: whitesmoke;
     display: flex;
@@ -72,35 +72,35 @@ body{
     align-items: center;
 }
 
-.utente{
+.utente {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
     gap: 10px;
     width: 40%;
     margin: 0 10px;
     font-weight: 500;
 }
 
-.utente span{
+.utente span {
     width: 70%;
 }
 
 
-.utente img{
+.utente img {
     height: 50px;
     width: 50px;
     border-radius: 50%;
 }
 
-.utente i{
+.utente i {
     font-size: 25px;
     color: grey;
 }
 
 /* Inserisco la riga BUNNER */
-.bunner{
+.bunner {
     height: 70px;
     background-color: lightskyblue;
     display: flex;
@@ -108,13 +108,13 @@ body{
     justify-content: flex-start;
 }
 
-.bunner i{
-  font-size: 18px;
-  font-weight: 800;
+.bunner i {
+    font-size: 18px;
+    font-weight: 800;
 }
 
 /* Inserisco la FINDBAR */
-.findbar{
+.findbar {
     height: 50px;
     background-color: whitesmoke;
     display: flex;
@@ -122,12 +122,12 @@ body{
     padding: 5px;
 }
 
-.findbar form{
+.findbar form {
     border: 2px solid lightgrey;
     border-radius: 6px;
 }
 
-.findbar input{
+.findbar input {
     height: 40px;
     width: 300px;
     border: 0;
@@ -135,12 +135,12 @@ body{
 }
 
 /* Inserisco la CONTACT-CHAT */
-.contact-chat{
+.contact-chat {
     height: calc(100% - 70px - 70px - 50px);
     overflow-y: scroll;
 }
 
-.chatUtente{
+.chatUtente {
     padding: 10px 0;
     height: auto;
     background-color: white;
@@ -149,59 +149,59 @@ body{
     align-items: center;
 }
 
-.chatUtente:hover{
+.chatUtente:hover {
     background-color: lightgray;
 }
 
 
 
 /* Definisco la seconda macro sezione dello screen */
-.col-chat{
+.col-chat {
     width: 65%;
     border: 1px solid gray;
 }
 
 /* Definisco utenteCHAT */
-.utenteChat{
+.utenteChat {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
     gap: 10px;
     width: 130px;
     margin: 0 10px;
     font-weight: 500;
 }
 
-.utenteChat span{
+.utenteChat span {
     width: 80%;
 }
 
 
-.utenteChat img{
+.utenteChat img {
     height: 50px;
     width: 50px;
     border-radius: 50%;
 }
 
-.utenteChat i{
+.utenteChat i {
     font-size: 20px;
     color: grey;
-    margin-right:  10px;
+    margin-right: 10px;
 }
 
 /* Definisco la CHAT */
-.chat{
+.chat {
     height: 80%;
     width: 100%;
-    background-image:url(img/sfondo.png);
+    background-image: url(img/sfondo.png);
     background-size: contain;
     overflow-y: scroll;
 }
 
 
 /* Definisco writeChat */
-.writeChat{
+.writeChat {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -215,4 +215,32 @@ body{
     margin: 30px;
 }
 
+/* Gestisco la parte relativa al click dell'emoji */
+.emoji-picker {
+    display: inline-block;
+    position: relative;
+}
 
+.emoji-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    overflow-y: hidden;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.emoji-container:hover {
+    overflow-y: auto;
+}
+
+.emoji-container button {
+    border: 0;
+    margin: 2px;
+    padding: 2px;
+    font-size: 20px;
+}

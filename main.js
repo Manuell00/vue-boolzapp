@@ -194,13 +194,22 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            showEmojiPicker: false,
+            emojiList: ['💻', '😄', '😎', '🎉', '🌟','🫡', '🔝', '😂', '🍝','🎅',],
+            inputText: ''
         }
     },
 
     // Inserisco i metodi
     methods: {
-      
+        toggleEmojiPicker() {
+            this.showEmojiPicker = !this.showEmojiPicker;
+        },
+
+        insertEmoji(emoji) {
+            this.inputText += emoji;
+        }
 
     }
 }).mount("#app");
