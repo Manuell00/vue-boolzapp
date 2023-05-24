@@ -60,6 +60,7 @@ body{
 /* Definisco la prima macro sezione dello screen */
 .col-contatti{
     width: 35%;
+    border: 1px solid gray;
 }
 
 /* Inserisco la riga MIOUTENTE */
@@ -154,12 +155,64 @@ body{
 
 
 
-
-
-
 /* Definisco la seconda macro sezione dello screen */
 .col-chat{
     width: 65%;
-    background-color: yellow;
+    border: 1px solid gray;
 }
+
+/* Definisco utenteCHAT */
+.utenteChat{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    gap: 10px;
+    width: 130px;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+.utenteChat span{
+    width: 80%;
+}
+
+
+.utenteChat img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.utenteChat i{
+    font-size: 20px;
+    color: grey;
+    margin-right:  10px;
+}
+
+/* Definisco la CHAT */
+.chat{
+    height: 80%;
+    width: 100%;
+    background-image:url(img/sfondo.png);
+    background-size: contain;
+    overflow-y: scroll;
+}
+
+
+/* Definisco writeChat */
+.writeChat{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: whitesmoke;
+    height: calc(100% - 80% - 70px);
+}
+
+.writeChat i {
+    color: grey;
+    font-size: 20px;
+    margin: 30px;
+}
+
 

@@ -17,6 +17,9 @@
     <!-- Definisco il title -->
     <title>Boolzapp</title>
 
+    <!-- Inserisco il logo di whtsapp -->
+    <link rel="icon" href="img/logowhatsapp.png">
+
     <!-- Collego il foglio di stile  -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -42,7 +45,7 @@
                         <span class="name">{{contacts[0].name}}</span>
                     </div>
 
-                    <div class="utente">
+                    <div class="utenteChat">
                         <i class="fa-sharp fa-solid fa-spinner"></i>
                         <i class="fa-solid fa-message"></i>
                         <i class="fa-solid fa-list"></i>
@@ -82,9 +85,42 @@
 
             </div>
 
+
+
+
             <!-- COLONNA CHAT -->
             <div class="col-chat">
-                ciso
+                 <!-- Definisco la riga UTENTECHAT -->
+                <div class="mioUtente">
+                    <div class="utenteChat">
+                        <img :src="contacts[1].avatar" alt="chat Immagine">
+                        <span class="name">{{contacts[1].name}}</span>
+                    </div>
+
+                    <div class="utenteChat">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-list"></i>
+                    </div>
+                </div>
+
+                <!-- Definisco la CHAT -->
+                <div class="chat">
+
+                </div>
+
+                <!-- Definisco la barra per scrivere -->
+                <div class="writeChat">
+                    <i class="fa-regular fa-face-smile"></i>
+
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control" aria-label="Sizing example input" placeholder="Scrivi un messaggio"   aria-describedby="inputGroup-sizing-sm">
+                    </div>
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                </div>
+
 
 
             </div>
