@@ -78,10 +78,11 @@
 
                 <!-- Definisco la parte dei contatti CONTACT-CHAT -->
                 <div class="contact-chat">
-                    <div class="chatUtente" v-for="(item,index) in contacts">
-                        <div class="utente" v-if="index !== 0">
-                            <img :src="item.avatar" alt="{{item.name}} Immagine">
-                            <span class="name">{{item.name}}</span>
+                    <div class="chatUtente" v-for="(contact,index) in contacts" :key="contact.name"
+                        @click="selectContact(contact)" v-show="index !== 0">
+                        <div class="utente">
+                            <img :src="contact.avatar" :alt="contact.name" />
+                            <span>{{ contact.name }}</span>
                         </div>
                     </div>
                 </div>
@@ -109,6 +110,10 @@
 
                 <!-- Definisco la CHAT -->
                 <div class="chat">
+                    <!-- <div v-if="inputText !== '' && sendMessageOnEnter === true">
+                        {{inputText}}
+                    </div> -->
+
 
                 </div>
 
@@ -119,27 +124,22 @@
                         <i class="fa-regular fa-face-smile" @click="toggleEmojiPicker"></i>
 
                         <div v-if="showEmojiPicker" class="emoji-container">
-                            <button v-for="emoji in emojiList" :key="emoji" @click="insertEmoji(emoji)">{{emoji}}</button>
+                            <button v-for="emoji in emojiList" :key="emoji"
+                                @click="insertEmoji(emoji)">{{emoji}}</button>
                         </div>
                     </div>
 
                     <div class="input-group input-group-sm">
                         <input type="text" class="form-control" aria-label="Sizing example input"
-                            placeholder="Scrivi un messaggio" aria-describedby="inputGroup-sizing-sm" v-model="inputText">
+                            placeholder="Scrivi un messaggio" aria-describedby="inputGroup-sizing-sm"
+                            v-model="inputText" @keyup.enter="sendMessage">
                     </div>
 
                     <i class="fa-solid fa-microphone"></i>
 
                 </div>
-
-
-
             </div>
-
-
         </div>
-
-
     </div>
 
     <!-- Inserisco i collegamenti vue e il file js -->

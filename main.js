@@ -196,8 +196,10 @@ createApp({
                 }
             ],
             showEmojiPicker: false,
-            emojiList: ['💻', '😄', '😎', '🎉', '🌟','🫡', '🔝', '😂', '🍝','🎅',],
-            inputText: ''
+            emojiList: ['💻', '😄', '😎', '🎉', '🌟', '🫡', '🔝', '😂', '🍝', '🎅',],
+            inputText: '',
+            sendMessageOnEnter : false,
+            selectedContact: null,
         }
     },
 
@@ -209,7 +211,15 @@ createApp({
 
         insertEmoji(emoji) {
             this.inputText += emoji;
-        }
+        },
 
+        selectContact(contact) {
+            this.selectedContact = contact;
+        },
+
+        sendMessage() {
+        const messageText = this.inputText 
+        this.sendMessageOnEnter = true
+        },
     }
 }).mount("#app");

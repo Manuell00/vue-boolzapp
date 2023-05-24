@@ -78,13 +78,13 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-    width: 40%;
+    width: 50%;
     margin: 0 10px;
     font-weight: 500;
 }
 
 .utente span {
-    width: 70%;
+    width: 80%;
 }
 
 
