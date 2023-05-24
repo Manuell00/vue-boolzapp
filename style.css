@@ -252,8 +252,17 @@ body {
 /* Messaggi inviati */
 .green-message {
     color : black;
-    padding: 5px;
+    margin: 20px;
+    padding: 8px;
+    border-radius: 10px;
     background-color: lightgreen;
-    text-align: right;
-    z-index: 200;
+    z-index: 100;
+    height: auto;
 } 
+
+.send-chat p {
+    display: inline-block;
+    max-width: 300px; /* Imposta la larghezza fissa desiderata */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }

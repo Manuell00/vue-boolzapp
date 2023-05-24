@@ -109,9 +109,18 @@
                 </div>
 
                 <!-- Definisco la CHAT -->
-                <div class="chat" :class="principal">
-                    <div v-if="inputText !== '' && sendMessageOnEnter === true">
-                        {{inputText}}
+                <div class="chat">
+                    <div v-if="inputText !== '' && sendMessageOnEnter === true" class="row">
+
+                        <!-- Prima colonna -->
+                        <div class="col-md-6 text-left">
+                            
+                        </div>
+
+                        <!-- Seconda colonna -->
+                        <div class="col-md-6 text-right send-chat">
+                            <p :class="principal">{{inputText}}</p>
+                        </div>
                     </div>
 
 
