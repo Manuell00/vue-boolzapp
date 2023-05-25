@@ -198,6 +198,10 @@ createApp({
             // Definisco la searchQuery per la ricerca nella findbar
             searchQuery: '', 
 
+            // Definisco clickedChat per cambiare img e nome nella chat
+            avatarClickedChat:'',
+            nameClickedChat:'',
+
             // Definisco una variabile inputText che prenderà i valori presenti della barra di input
             inputText: '',
 
@@ -215,7 +219,7 @@ createApp({
         }
     },
 
-    // Inserisco i metodi
+    // Inserisco i METODI
     methods: {
 
         // Gestisco gli emoji nella barra per scrivere
@@ -230,11 +234,6 @@ createApp({
         // Gestisco la selezione dei contatti al click
         selectContact(contact) {
             this.selectedContact = contact;
-            this.contacts = this.contacts.sort((a, b) => {
-              if (a === contact) return -1; // Posiziona la chatUtente in cima
-              if (b === contact) return 1;
-              return 0;
-            });
           },
 
         getLastMessageTime(contact) {

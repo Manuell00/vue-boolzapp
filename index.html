@@ -81,7 +81,7 @@
                 <!-- Definisco la parte dei contatti CONTACT-CHAT -->
                 <div class="contact-chat">
                     <div class="chatUtente" v-for="(contact,index) in contacts" :key="contact.name"
-                        @click="selectContact(contact)" v-if="index !== 0" v-show="index !== 0 && contact.name.includes(searchQuery)">
+                        @click="selectContact(contact), avatarClickedChat = contact.avatar, nameClickedChat = contact.name" v-if="index !== 0" v-show="index !== 0 && contact.name.includes(searchQuery)">
 
                         <div class="utente">
 
@@ -109,8 +109,8 @@
                 <!-- Definisco la riga UTENTECHAT -->
                 <div class="mioUtente">
                     <div class="utenteChat">
-                        <img :src="contacts[1].avatar" alt="chat Immagine">
-                        <span class="name">{{contacts[1].name}}</span>
+                        <img :src="avatarClickedChat" alt="chat Immagine">
+                        <span class="name">{{nameClickedChat}}</span>
                     </div>
 
                     <div class="utenteChat">
