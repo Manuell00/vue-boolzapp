@@ -1,3 +1,8 @@
+// Milestone 3
+// ● Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+// ● Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+
+
 // Inizializzo Vue
 const { createApp } = Vue;
 
@@ -196,17 +201,14 @@ createApp({
             emojiList: ['💻', '😄', '😎', '🎉', '🌟', '🫡', '🔝', '😂', '🍝', '🎅',],
 
             // Definisco la searchQuery per la ricerca nella findbar
-            searchQuery: '', 
+            searchQuery: '',
 
             // Definisco clickedChat per cambiare img e nome nella chat
-            avatarClickedChat:'',
-            nameClickedChat:'',
+            avatarClickedChat: '',
+            nameClickedChat: '',
 
             // Definisco una variabile inputText che prenderà i valori presenti della barra di input
             inputText: '',
-
-            // Definisco una variabile per dire se il messaggio è stato inviato o meno
-            sendMessageOnEnter: false,
 
             selectedContact: null,
 
@@ -234,7 +236,7 @@ createApp({
         // Gestisco la selezione dei contatti al click
         selectContact(contact) {
             this.selectedContact = contact;
-          },
+        },
 
         getLastMessageTime(contact) {
             if (contact.messages.length > 0) {
@@ -244,15 +246,19 @@ createApp({
             }
 
             else {
-                return ''; // o qualsiasi valore predefinito desiderato
+                return '';
             }
         },
 
-        // Gestisco l'invio dei messaggi dalla barra di input
         sendMessage() {
-            this.sendMessageOnEnter = true
-            this.principal = "green-message"
-        },
+            console.log(inputText);
+            // selectContact.push({
+            //     date: `'${new Date()}'`,
+            //     message: `'${inputText}`,
+            //     status: 'sent'
+            // })
+            // console.log(selectContact);
+        }
     }
 }
 ).mount("#app");
