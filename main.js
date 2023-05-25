@@ -251,14 +251,36 @@ createApp({
         },
 
         sendMessage() {
-            console.log(inputText);
-            // selectContact.push({
-            //     date: `'${new Date()}'`,
-            //     message: `'${inputText}`,
-            //     status: 'sent'
-            // })
-            // console.log(selectContact);
+            for (let i = 0; i < this.contacts.length; i++) {
+                if (
+                    this.contacts[i].name === this.nameClickedChat &&
+                    this.contacts[i].avatar === this.avatarClickedChat
+                ) {
+                    this.contacts[i].messages.push({
+                        date: new Date().toLocaleString(),
+                        message: this.inputText,
+                        status: 'sent'
+                    });
+                }
+            }
+
+            this.inputText = '';
+
+            // Aggiungo la risposta "ok" dopo 1 secondo
+            setTimeout(() => {
+                this.contacts.forEach(contact => {
+                    if (
+                        contact.name === this.nameClickedChat &&
+                        contact.avatar === this.avatarClickedChat
+                    ) {
+                        contact.messages.push({
+                            date: new Date().toLocaleString(),
+                            message: 'Ok',
+                            status: 'received'
+                        });
+                    }
+                });
+            }, 1000);
         }
     }
-}
-).mount("#app");
+}).mount("#app");
