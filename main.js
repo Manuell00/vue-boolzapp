@@ -1,8 +1,3 @@
-
-// Milestone 1 : Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
-// Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
-
-
 // Inizializzo Vue
 const { createApp } = Vue;
 
@@ -195,8 +190,13 @@ createApp({
                     ],
                 }
             ],
+
+            // Definisco le variabili per gli emoji
             showEmojiPicker: false,
             emojiList: ['💻', '😄', '😎', '🎉', '🌟', '🫡', '🔝', '😂', '🍝', '🎅',],
+
+            // Definisco la searchQuery per la ricerca nella findbar
+            searchQuery: '', 
 
             // Definisco una variabile inputText che prenderà i valori presenti della barra di input
             inputText: '',
@@ -230,7 +230,12 @@ createApp({
         // Gestisco la selezione dei contatti al click
         selectContact(contact) {
             this.selectedContact = contact;
-        },
+            this.contacts = this.contacts.sort((a, b) => {
+              if (a === contact) return -1; // Posiziona la chatUtente in cima
+              if (b === contact) return 1;
+              return 0;
+            });
+          },
 
         getLastMessageTime(contact) {
             if (contact.messages.length > 0) {
@@ -243,7 +248,7 @@ createApp({
                 return ''; // o qualsiasi valore predefinito desiderato
             }
         },
-        
+
         // Gestisco l'invio dei messaggi dalla barra di input
         sendMessage() {
             this.sendMessageOnEnter = true

@@ -70,17 +70,22 @@
                 <!-- Definisco la barra di ricerca FINDBAR -->
                 <div class="findbar">
                     <form class="d-flex" role="search">
+
                         <button class="btn bg-white" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+
                         <input class="form-control me-2" type="search" placeholder="Cerca o inizia una nuova chat"
-                            aria-label="Search">
+                            aria-label="Search" v-model="searchQuery">
                     </form>
                 </div>
 
                 <!-- Definisco la parte dei contatti CONTACT-CHAT -->
                 <div class="contact-chat">
                     <div class="chatUtente" v-for="(contact,index) in contacts" :key="contact.name"
-                        @click="selectContact(contact)" v-if="index !== 0" v-show="index !== 0">
+                        @click="selectContact(contact)" v-if="index !== 0" v-show="index !== 0 && contact.name.includes(searchQuery)">
+
                         <div class="utente">
+
+                            <!-- Inserisco l'immagine dell'avatar-->
                             <img :src="contact.avatar" :alt="contact.name" />
 
                             <!-- Creo il div con nome e frase -->
