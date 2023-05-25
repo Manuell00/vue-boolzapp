@@ -108,7 +108,12 @@
             <div class="col-chat">
                 <!-- Definisco la riga UTENTECHAT -->
                 <div class="mioUtente">
-                    <div class="utenteChat">
+                    <div class="utenteChat" v-if="avatarClickedChat==='' && nameClickedChat === '' ">
+                        <img :src="contacts[1].avatar" alt="chat Immagine">
+                        <span class="name">{{contacts[1].name}}</span>
+                    </div>
+
+                    <div class="utenteChat"  v-if="avatarClickedChat !=='' && nameClickedChat !== '' " >
                         <img :src="avatarClickedChat" alt="chat Immagine">
                         <span class="name">{{nameClickedChat}}</span>
                     </div>
@@ -172,10 +177,11 @@
     <!-- Inserisco i collegamenti vue e il file js -->
     <script src="https://unpkg.com/vue@3"></script>
     <script src="main.js"></script>
-
 </body>
 
 </html>
+
+
 
 
 <!-- <div v-if="inputText !== '' && sendMessageOnEnter === true" class="row">
