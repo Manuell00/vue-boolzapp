@@ -129,6 +129,7 @@
 
                 <!-- Inizializzo caricando subito i messaggi della chat in posizione 1, la prima è la mia quindi la escludo -->
                 <div class="chat">
+
                     <div v-if="selectedContact == null">
                         <div v-for="message in contacts[1].messages" :key="message.date"
                             :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}">
@@ -138,15 +139,15 @@
                     </div>
 
                     <!-- Utilizzo le proprietà date dalla funzione selectContact(contact) per visualizzare i messaggi del contatto selezionato -->
-                    <div v-if="selectedContact" class="chatVisual ">
+                    <div v-if="selectedContact" class="chatContainer">
                         <div v-for="message in selectedContact.messages" :key="message.date"
-                            :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}"
-                            class="chatVisual">
+                            :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}">
                             <div class="message">{{ message.message }}</div>
                             <span class="date">{{ message.date }}</span>
 
                         </div>
                     </div>
+
                 </div>
 
                 <!-- Definisco la barra per scrivere -->
