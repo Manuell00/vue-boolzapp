@@ -79,14 +79,21 @@
                 <!-- Definisco la parte dei contatti CONTACT-CHAT -->
                 <div class="contact-chat">
                     <div class="chatUtente" v-for="(contact,index) in contacts" :key="contact.name"
-                        @click="selectContact(contact)" v-show="index !== 0">
+                        @click="selectContact(contact)" v-if="index !== 0" v-show="index !== 0">
                         <div class="utente">
                             <img :src="contact.avatar" :alt="contact.name" />
-                            <span>{{ contact.name }}</span>
+
+                            <!-- Creo il div con nome e frase -->
+                            <div>
+                                <span>{{ contact.name }}</span>
+                                <div class="light"> Ultimo messaggio inviato</div>
+                            </div> 
                         </div>
+
+                        <!-- Creo il div con la data finale richiamando la funzione getLastMessageDate(contact) -->
+                        <div class="light-top">{{ getLastMessageTime(contact) }}</div>
                     </div>
                 </div>
-
             </div>
 
 
@@ -116,14 +123,15 @@
                         <div v-for="message in contacts[1].messages" :key="message.date"
                             :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}">
                             <span class="message"> {{ message.message }}</span>
-                            <span  class="date"> {{ message.date }}</span>
+                            <span class="date"> {{ message.date }}</span>
                         </div>
                     </div>
 
-                <!-- Utilizzo le proprietà date dalla funzione selectContact(contact) per visualizzare i messaggi del contatto selezionato -->
+                    <!-- Utilizzo le proprietà date dalla funzione selectContact(contact) per visualizzare i messaggi del contatto selezionato -->
                     <div v-if="selectedContact" class="chatVisual ">
                         <div v-for="message in selectedContact.messages" :key="message.date"
-                            :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}" class="chatVisual">
+                            :class="{'sent': message.status === 'sent', 'received': message.status === 'received'}"
+                            class="chatVisual">
                             <div class="message">{{ message.message }}</div>
                             <span class="date">{{ message.date }}</span>
 

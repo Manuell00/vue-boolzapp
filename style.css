@@ -42,6 +42,19 @@ body {
     text-decoration: underline;
 }
 
+.light{
+    color: #ccc;
+    font-size: 10px;
+}
+
+.light-top{
+    height: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: #ccc;
+    font-size: 10px;
+}
 /* Definisco lo screen */
 #screen {
     display: flex;

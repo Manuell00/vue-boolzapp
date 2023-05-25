@@ -202,14 +202,14 @@ createApp({
             inputText: '',
 
             // Definisco una variabile per dire se il messaggio è stato inviato o meno
-            sendMessageOnEnter : false,
+            sendMessageOnEnter: false,
 
             selectedContact: null,
 
             // Definisco una variabile che mi definisca la classe quando invio il messaggio
-            principal : ''
+            principal: ''
 
-            
+
 
 
         }
@@ -217,6 +217,8 @@ createApp({
 
     // Inserisco i metodi
     methods: {
+
+        // Gestisco gli emoji nella barra per scrivere
         toggleEmojiPicker() {
             this.showEmojiPicker = !this.showEmojiPicker;
         },
@@ -225,13 +227,28 @@ createApp({
             this.inputText += emoji;
         },
 
+        // Gestisco la selezione dei contatti al click
         selectContact(contact) {
             this.selectedContact = contact;
-          },
+        },
 
+        getLastMessageTime(contact) {
+            if (contact.messages.length > 0) {
+                let lastMessageTime = contact.messages[contact.messages.length - 1].date;
+                let hour = lastMessageTime.substring(lastMessageTime.length - 8);
+                return hour;
+            }
+
+            else {
+                return ''; // o qualsiasi valore predefinito desiderato
+            }
+        },
+        
+        // Gestisco l'invio dei messaggi dalla barra di input
         sendMessage() {
             this.sendMessageOnEnter = true
             this.principal = "green-message"
         },
     }
-}).mount("#app");
+}
+).mount("#app");
